@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FOAM LINE TESTING REPORT</title>
+    
+</head>
+
+<body>
+
+    <div class="form-container" id="pdf-content">
+        <table class="header-table">
+            <tr>
+                <td rowspan="2" style="width: 10%; text-align: center;">
+                    <img src="hpcl-logo.png" alt="HP Logo" class="hp-logo">
+                </td>
+                <td class="header-left">
+                    <strong>Hindustan Petroleum Corporation Limited</strong><br>
+                    Mumbai Refinery
+                </td>
+                <td rowspan="3" class="header-right">
+                    Issue No: 1<br>
+                    Issue Date: 8/11/2024<br>
+                    Rev No: 0<br>
+                    Rev Date:<br>
+                    <span class="no-wrap">Doc No: HPCL MR/FRM/F&S/08200-09</span>
+                </td>
+                
+            </tr>
+            <tr>
+                <td class="header-left">
+                    <strong>Testing Of Foam Line Of Tank</strong>
+                </td>
+               
+            </tr>
+        </table>
+        
+        <!-- Date and Shift -->
+        <div class="flex-row">
+
+            <div class="form-group">
+                <label>TANK NUMBER</label>
+                <input type="text" name="Tanknumber">
+            </div>
+           
+
+            <div class="form-group">
+                <label>SHIFT</label>
+                    <select name="Shift" required>
+                        <option value="">Select</option>
+                        <option value="00x08">00x08</option>
+                        <option value="08x20">08x20</option>
+                        <option value="08x16">08x16</option>
+                        <option value="16x00">16x00</option>
+                        <option value="20x08">20x08</option>
+                    </select>
+            </div>
+
+
+            <div class="form-group">
+                    <label>DATE</label>
+                    <input type="date" name="Date">
+            </div>
+        </div>
+
+         <!-- Status Section -->
+         <h3>1.FOAM LINE CONDITION</h3>
+         <table>
+            <tr>
+                 <td>Foam Line Condition</td>
+                 <td>
+                     <select name="Foamlinecondition">
+                         <option value="">Select</option>
+                         <option>Okay</option>
+                         <option>Not okay</option>
+                     </select></td>
+ 
+                 <td>Obstruction to foam line</td>
+                 <td><select name="Obstruction">
+                             <option value="">Select</option>
+                             <option>Okay</option>
+                             <option>Not okay</option>
+                     </select></td>
+            </tr>
+             <tr>
+                 <td>Suport of foam line</td>
+                 <td><select name="Suportfoamline">
+                         <option value="">Select</option>
+                         <option>Good</option>
+                         <option>Not good</option>
+                         <option>No support</option>
+                     </select></td>
+ 
+                 <td>Vegetation around foam lines inside
+                    dyke</td>
+                 <td><select name="Vegetationdyke">
+                         <option value="">Select</option>
+                         <option>Okay</option>
+                         <option>Not okay</option>
+                         <option>Not checked</option>
+                     </select></td>
+                 
+                 
+             </tr>
+             <tr>
+                 <td>Drain Valve condition</td>
+                 <td><select name="DrainValvecondition">
+                         <option value="">Select</option>
+                         <option>Not checked</option>
+                         <option>Not provided</option>
+                         <option>Okay</option>
+                         <option>Plugged up</option>
+                         <option>Wheel broken</option>
+                         <option>Wheel free</option>
+                     </select></td>
+                 <td>Wire mesh provided in foam
+                    pourers or not
+                    </td>
+                 <td><select name="Wiremesh">
+                             <option value="">Select</option>
+                             <option>Not checked</option>
+                         <option>Not provided</option>
+                         <option>Okay</option>
+                         <option>Broken</option>
+                     </select></td>
+             </tr>
+             
+            <tr>
+                <td>Dyke condition</td>
+                <td><select name="Dykecondition">
+                    <option value="">Select</option>
+                    <option>Not okay</option>
+                    <option>Not checked</option>
+                    </select></td>
+                <td>Foam line painting condtion</td>
+                <td><select name="Foamlinepainting">
+                            <option value="">Select</option>
+                            <option>Not checked</option>
+                        <option>Not required</option>
+                        <option>Required</option>
+                        
+                    </select></td>
+            </tr>
+            <tr>
+                <td>Foam line end Couplings condition</td>
+                <td><select name="endCouplingscondition">
+                        <option value="">Select</option>
+                        <option>Checked</option>
+                        <option>Not okay</option>
+                        <option>Okay</option>
+                    </select></td>
+                <td>Type of End Couplings</td>
+                <td>
+                    <input type="text" name="TypeofEndCouplings">
+                  </td>
+                    </select></td>
+            </tr>
+         </table>
+ 
+         <h3>2.HYDRAULIC TESTING</h3>
+         <table>
+             <tr>
+               <td>Testing Pressure</td>
+               <td>
+                 <input type="text" name="TestingPressure">
+               </td>
+               <td>Nature of defects</td>
+               <td>
+                 <input type="text" name="Natureofdefects">
+               </td>
+             </tr>
+             <tr>
+                 <td>No. of foam pourer working</td>
+                 <td>
+                   <input type="text" name="foampourerworking">
+                 </td>
+                 <td>Location of defect</td>
+                 <td>
+                   <input type="text" name="Locationofdefect">
+                 </td>
+               </tr>
+               <tr>
+                <td>Quantity of Foam Compound used</td>
+                <td>
+                    <input type="text" name="Compoundused">
+                  </td>
+               </tr>
+ 
+         </table>  
+
+         <div class="form-group">
+            <label>3.OBSERVATIONS</label>
+            <textarea id="msg1" name="Observations"></textarea>
+        </div>
+
+        <div class="form-group">
+            <label>4.MAINTENANCE FOLLOW UP REQUIRED</label>
+            <textarea id="msg2" name="Maintenance"></textarea>
+        </div>
+
+        <div class="form-group">
+            <label>5.NOTIFICATION NUMBER</label>
+            <textarea id="msg3" name="Notification"></textarea>
+        </div>
+        <div class="form-group">
+            <label>TESTED BY</label>
+            <input type="text" name="testedby">
+        </div>
+
+        <div class="flex-row"></div>
+           
+
+        <div class="form-group">
+            <label>Direction</label>
+            <select name="direction" required>
+                <option value="">Select</option>
+                <option value="North &#8594;">North &#8594; <!-- Right Arrow -->
+                </option>
+                <option value="North &#8595;">North &#8595; <!-- Down Arrow -->
+                </option>
+                <option value="North &#8592;">North &#8592; <!-- Left Arrow -->
+                </option>
+                <option value="North &#8593;">North &#8593; <!-- Up Arrow -->
+                </option>
+            </select>
+        </div>   
+
+        <form id="tickForm">
+        <div class="tank-container">
+            <div class="tank">
+                <div class="tank-label">
+                    TANK
+                </div>
+    
+                <div class="ladder">
+                    <div class="side-rail left"></div>
+                    <div class="side-rail right"></div>
+                    <div class="rung"></div>
+                    <div class="rung"></div>
+                    <div class="rung"></div>
+                    <div class="rung"></div>
+                    <div class="rung"></div>
+                    <div class="rung"></div>
+                    <div class="rung"></div>
+                </div>
+            </div>
+    
+
+            
+            <div class="checkbox-container">
+                <input type="checkbox" name="box" value="0" class="checkbox box1">
+                <input type="checkbox" name="box" value="1" class="checkbox box2">
+                <input type="checkbox" name="box" value="2" class="checkbox box3">
+                <input type="checkbox" name="box" value="3" class="checkbox box4">
+                <input type="checkbox" name="box" value="4" class="checkbox box5">
+                <input type="checkbox" name="box" value="5" class="checkbox box6">
+                <input type="checkbox" name="box" value="6" class="checkbox box7">
+                <input type="checkbox" name="box" value="7" class="checkbox box8">
+                <input type="checkbox" name="box" value="8" class="checkbox box9">
+                <input type="checkbox" name="box" value="9" class="checkbox box10">
+                <input type="checkbox" name="box" value="10" class="checkbox box11">
+                <input type="checkbox" name="box" value="11" class="checkbox box12">
+            </div>
+        </form>
+        </div>
+
+
+        <!-- Save as PDF Button (will be hidden in PDF) -->
+        <button id="saveAsPdf">Save as PDF</button>
+    </div>
+
+    <script src="script.js"></script>
+
+   
+    
+    
+</body>
+
+</html>
